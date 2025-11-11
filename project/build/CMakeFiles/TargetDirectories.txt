@@ -1,0 +1,3 @@
+/mnt/c/Users/cleme/Documents/2025-6_IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/matrix-mult.dir
+/mnt/c/Users/cleme/Documents/2025-6_IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/cleme/Documents/2025-6_IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/rebuild_cache.dir
