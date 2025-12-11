@@ -8,28 +8,20 @@
 using namespace lbcrypto;
 using namespace std;
 
-// Tolerance for Part B
-const double EPSILON = 1e-3;
+const double acceptable_error = 1e-3;
 
-// Plaintext functions for verification
+// Plaintext functions
 double square_func(double x) {
     return x * x;
 }
 
 double poly_silu_approx(double x) {
-    // 0.5x + 0.25x^2 - (1/48)x^4
     return 0.5 * x + 0.25 * x * x - (1.0/48.0) * pow(x, 4);
 }
 
 int main() {
     try {
-        // =================================================================================
-        // 1. Setup CryptoContext
-        // =================================================================================
-        // Need more depth for activation functions (x^4)
-        // Convolution took depth ~1-2. x^4 adds 2 more mults. 
-        // Total depth needed approx 4 or 5.
-        // Let's set to 6 to be safe.
+        // setup cryptocontext and keys and features
         uint32_t multDepth = 6; 
         uint32_t scaleModSize = 50;
         uint32_t batchSize = 1;
@@ -49,9 +41,6 @@ int main() {
         KeyPair keys = cc->KeyGen();
         cc->EvalMultKeyGen(keys.secretKey);
 
-        // =================================================================================
-        // 2. Re-generating Part A Output (Convolution)
-        // =================================================================================
         // We reuse logic from Part A to get the inputs for Part B
         vector<vector<double>> X = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
         vector<vector<double>> K = {{1.0, 0.0}, {0.0, 1.0}};
@@ -80,17 +69,10 @@ int main() {
             }
         }
         
-        // Expected convolution result for verification reference
+        // Expected convolution result (for verification)
         vector<vector<double>> expectedConv = {{6.0, 8.0}, {12.0, 14.0}};
 
-        // =================================================================================
-        // 3. Part B: Encrypted Non-Linear Functions
-        // =================================================================================
-        cout << "\nComputing Part B: Non-Linear Functions..." << endl;
-
-        // Apply functions to each element of convolutionOutput
-        // Square: f1(x) = x^2
-        // SiLU Approx: f2(x) = 0.5x + 0.25x^2 - (1/48)x^4
+        // Apply both functions to each element of convolutionOutput
         
         bool success = true;
 
@@ -109,7 +91,7 @@ int main() {
                  double expected = square_func(expectedConv[i][j]);
                  
                  cout << "Input: " << expectedConv[i][j] << " | x^2 Result: " << val << " | Expected: " << expected;
-                 if (abs(val - expected) > EPSILON) {
+                 if (abs(val - expected) > acceptable_error) {
                      cout << " [FAIL]";
                      success = false;
                  } else {
@@ -129,11 +111,8 @@ int main() {
                  Ciphertext<DCRTPoly> x4 = cc->EvalMult(x2, x2);
 
                  // Compute terms
-                 // 0.5x
                  Ciphertext<DCRTPoly> term1 = cc->EvalMult(x, 0.5);
-                 // 0.25x^2
                  Ciphertext<DCRTPoly> term2 = cc->EvalMult(x2, 0.25);
-                 // -(1/48)x^4
                  Ciphertext<DCRTPoly> term3 = cc->EvalMult(x4, -1.0/48.0);
                  
                  // Sum
@@ -148,7 +127,7 @@ int main() {
                  double expected = poly_silu_approx(expectedConv[i][j]);
 
                  cout << "Input: " << expectedConv[i][j] << " | SiLU Result: " << val << " | Expected: " << expected;
-                 if (abs(val - expected) > EPSILON) {
+                 if (abs(val - expected) > acceptable_error) {
                      cout << " [FAIL]";
                      success = false;
                  } else {
