@@ -116,6 +116,117 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named matrix-mult
+
+# Build rule for target.
+matrix-mult: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 matrix-mult
+.PHONY : matrix-mult
+
+# fast build rule for target.
+matrix-mult/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/build
+.PHONY : matrix-mult/fast
+
+#=============================================================================
+# Target rules for targets named encrypted_convolution
+
+# Build rule for target.
+encrypted_convolution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encrypted_convolution
+.PHONY : encrypted_convolution
+
+# fast build rule for target.
+encrypted_convolution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/build
+.PHONY : encrypted_convolution/fast
+
+#=============================================================================
+# Target rules for targets named encrypted_activation
+
+# Build rule for target.
+encrypted_activation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encrypted_activation
+.PHONY : encrypted_activation
+
+# fast build rule for target.
+encrypted_activation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/build
+.PHONY : encrypted_activation/fast
+
+encrypted_activation.o: encrypted_activation.cpp.o
+.PHONY : encrypted_activation.o
+
+# target to build an object file
+encrypted_activation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/encrypted_activation.cpp.o
+.PHONY : encrypted_activation.cpp.o
+
+encrypted_activation.i: encrypted_activation.cpp.i
+.PHONY : encrypted_activation.i
+
+# target to preprocess a source file
+encrypted_activation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/encrypted_activation.cpp.i
+.PHONY : encrypted_activation.cpp.i
+
+encrypted_activation.s: encrypted_activation.cpp.s
+.PHONY : encrypted_activation.s
+
+# target to generate assembly for a file
+encrypted_activation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/encrypted_activation.cpp.s
+.PHONY : encrypted_activation.cpp.s
+
+encrypted_convolution.o: encrypted_convolution.cpp.o
+.PHONY : encrypted_convolution.o
+
+# target to build an object file
+encrypted_convolution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/encrypted_convolution.cpp.o
+.PHONY : encrypted_convolution.cpp.o
+
+encrypted_convolution.i: encrypted_convolution.cpp.i
+.PHONY : encrypted_convolution.i
+
+# target to preprocess a source file
+encrypted_convolution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/encrypted_convolution.cpp.i
+.PHONY : encrypted_convolution.cpp.i
+
+encrypted_convolution.s: encrypted_convolution.cpp.s
+.PHONY : encrypted_convolution.s
+
+# target to generate assembly for a file
+encrypted_convolution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/encrypted_convolution.cpp.s
+.PHONY : encrypted_convolution.cpp.s
+
+matrix-multiplication.o: matrix-multiplication.cpp.o
+.PHONY : matrix-multiplication.o
+
+# target to build an object file
+matrix-multiplication.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/matrix-multiplication.cpp.o
+.PHONY : matrix-multiplication.cpp.o
+
+matrix-multiplication.i: matrix-multiplication.cpp.i
+.PHONY : matrix-multiplication.i
+
+# target to preprocess a source file
+matrix-multiplication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/matrix-multiplication.cpp.i
+.PHONY : matrix-multiplication.cpp.i
+
+matrix-multiplication.s: matrix-multiplication.cpp.s
+.PHONY : matrix-multiplication.s
+
+# target to generate assembly for a file
+matrix-multiplication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/matrix-multiplication.cpp.s
+.PHONY : matrix-multiplication.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... encrypted_activation"
+	@echo "... encrypted_convolution"
+	@echo "... matrix-mult"
+	@echo "... encrypted_activation.o"
+	@echo "... encrypted_activation.i"
+	@echo "... encrypted_activation.s"
+	@echo "... encrypted_convolution.o"
+	@echo "... encrypted_convolution.i"
+	@echo "... encrypted_convolution.s"
+	@echo "... matrix-multiplication.o"
+	@echo "... matrix-multiplication.i"
+	@echo "... matrix-multiplication.s"
 .PHONY : help
 
 

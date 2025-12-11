@@ -1,2 +1,5 @@
+/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/matrix-mult.dir
+/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/encrypted_convolution.dir
+/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/encrypted_activation.dir
 /mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/edit_cache.dir
 /mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles/rebuild_cache.dir

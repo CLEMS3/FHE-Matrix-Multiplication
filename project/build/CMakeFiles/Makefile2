@@ -63,7 +63,9 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/matrix-mult.dir/all
+all: CMakeFiles/encrypted_convolution.dir/all
+all: CMakeFiles/encrypted_activation.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,8 +73,88 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean:
+clean: CMakeFiles/matrix-mult.dir/clean
+clean: CMakeFiles/encrypted_convolution.dir/clean
+clean: CMakeFiles/encrypted_activation.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/matrix-mult.dir
+
+# All Build rule for target.
+CMakeFiles/matrix-mult.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" --progress-num=5,6 "Built target matrix-mult"
+.PHONY : CMakeFiles/matrix-mult.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/matrix-mult.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/matrix-mult.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 0
+.PHONY : CMakeFiles/matrix-mult.dir/rule
+
+# Convenience name for target.
+matrix-mult: CMakeFiles/matrix-mult.dir/rule
+.PHONY : matrix-mult
+
+# clean rule for target.
+CMakeFiles/matrix-mult.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix-mult.dir/build.make CMakeFiles/matrix-mult.dir/clean
+.PHONY : CMakeFiles/matrix-mult.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/encrypted_convolution.dir
+
+# All Build rule for target.
+CMakeFiles/encrypted_convolution.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" --progress-num=3,4 "Built target encrypted_convolution"
+.PHONY : CMakeFiles/encrypted_convolution.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/encrypted_convolution.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encrypted_convolution.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 0
+.PHONY : CMakeFiles/encrypted_convolution.dir/rule
+
+# Convenience name for target.
+encrypted_convolution: CMakeFiles/encrypted_convolution.dir/rule
+.PHONY : encrypted_convolution
+
+# clean rule for target.
+CMakeFiles/encrypted_convolution.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_convolution.dir/build.make CMakeFiles/encrypted_convolution.dir/clean
+.PHONY : CMakeFiles/encrypted_convolution.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/encrypted_activation.dir
+
+# All Build rule for target.
+CMakeFiles/encrypted_activation.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" --progress-num=1,2 "Built target encrypted_activation"
+.PHONY : CMakeFiles/encrypted_activation.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/encrypted_activation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encrypted_activation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/cleme/Documents/IIT/CS595-02 Privacy Preserving Machine Learning/Assigment 1/project/build/CMakeFiles" 0
+.PHONY : CMakeFiles/encrypted_activation.dir/rule
+
+# Convenience name for target.
+encrypted_activation: CMakeFiles/encrypted_activation.dir/rule
+.PHONY : encrypted_activation
+
+# clean rule for target.
+CMakeFiles/encrypted_activation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encrypted_activation.dir/build.make CMakeFiles/encrypted_activation.dir/clean
+.PHONY : CMakeFiles/encrypted_activation.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

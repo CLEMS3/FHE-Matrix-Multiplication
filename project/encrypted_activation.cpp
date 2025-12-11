@@ -36,7 +36,6 @@ int main() {
         cc->Enable(KEYSWITCH);
         cc->Enable(LEVELEDSHE);
 
-        cout << "CKKS Scheme Initialized for Part B" << endl;
 
         KeyPair keys = cc->KeyGen();
         cc->EvalMultKeyGen(keys.secretKey);
@@ -48,12 +47,12 @@ int main() {
         vector<vector<Ciphertext<DCRTPoly>>> encryptedX(3, vector<Ciphertext<DCRTPoly>>(3));
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                encryptedX[i][j] = cc->Encrypt(keys.publicKey, cc->MakeCKKSPackedPlaintext({X[i][j]}, scaleModSize, 0));
+                vector<double> val = {X[i][j]};
+                encryptedX[i][j] = cc->Encrypt(keys.publicKey, cc->MakeCKKSPackedPlaintext(val, scaleModSize, 0));
             }
         }
 
         vector<vector<Ciphertext<DCRTPoly>>> convolutionOutput(2, vector<Ciphertext<DCRTPoly>>(2));
-        cout << "Computing Part A Convolution to get inputs..." << endl;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 Ciphertext<DCRTPoly> sum;
@@ -138,9 +137,11 @@ int main() {
         }
 
         if (success) {
-            cout << "\nPart B: Encrypted Non-Linear Functions Completed successfully." << endl;
+            cout << "\nEncrypted Non-Linear Functions Completed successfully." << endl;
+            cout << "Whoopee! Bad guys won't be able to steal my precious numbers 😊" << endl;
         } else {
-            cout << "\nPart B: FAILED verification." << endl;
+            cout << "\nEncrypted Non-Linear Functions failing to get expected result. This can be due to unsufficient accuracy or wrong calculations" << endl;
+            cout << "🥺😢" << endl;
         }
 
     } catch (const exception& e) {

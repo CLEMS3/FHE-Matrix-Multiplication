@@ -27,8 +27,6 @@ int main() {
         cc->Enable(KEYSWITCH);
         cc->Enable(LEVELEDSHE);
 
-        cout << "CKKS Scheme Initialized" << endl;
-
         KeyPair keys = cc->KeyGen();
         cc->EvalMultKeyGen(keys.secretKey);
         // Inputs
@@ -52,7 +50,6 @@ int main() {
         };
 
         // Encrypt X
-        cout << "Encrypting Matrix X..." << endl;
         vector<vector<Ciphertext<DCRTPoly>>> encryptedX(3, vector<Ciphertext<DCRTPoly>>(3));
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -63,7 +60,6 @@ int main() {
         }
 
         // Computation of the convolution
-        cout << "Computing 2D Convolution..." << endl;
         vector<vector<Ciphertext<DCRTPoly>>> encryptedY(2, vector<Ciphertext<DCRTPoly>>(2));
 
         for (int i = 0; i < 2; i++) {
@@ -92,8 +88,8 @@ int main() {
             }
         }
 
-        // Verification
-        cout << "\nVerifying Results..." << endl;
+        // Verifying the results
+        cout << "\nVerifaction of the results" << endl;
         cout << "Expected Plaintext Result:" << endl;
         for(auto &row : expectedY) {
             cout << "[ ";
@@ -108,7 +104,7 @@ int main() {
             for (int j = 0; j < 2; j++) {
                 Plaintext result;
                 cc->Decrypt(keys.secretKey, encryptedY[i][j], &result);
-                result->SetLength(1); // We only care about the first slot
+                result->SetLength(1);
                 double val = result->GetCKKSPackedValue()[0].real();
                 
                 cout << val << " ";
@@ -123,9 +119,11 @@ int main() {
         }
 
         if (success) {
-            cout << "\nPart A: Encrypted 2x2 Convolution Completed successfully." << endl;
+            cout << "\nEncrypted Convolution Completed successfully." << endl;
+            cout << "Whoopee! Bad guys won't be able to steal my precious numbers 😊" << endl;
         } else {
-            cout << "\nPart A: FAILED verification." << endl;
+            cout << "\nEncrypted Convolution failing to get expected result. This can be due to unsufficient accuracy or wrong calculations" << endl;
+            cout << "🥺😢" << endl;
         }
 
     } catch (const exception& e) {
