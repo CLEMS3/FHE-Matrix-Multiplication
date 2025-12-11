@@ -1,5 +1,5 @@
 CMakeFiles/matrix-mult.dir/matrix-multiplication.cpp.o: \
- /mnt/c/Users/cleme/Documents/2025-6_IIT/CS595-02\ Privacy\ Preserving\ Machine\ Learning/Assigment\ 1/project/matrix-multiplication.cpp \
+ /mnt/c/Users/cleme/Documents/IIT/CS595-02\ Privacy\ Preserving\ Machine\ Learning/Assigment\ 1/project/matrix-multiplication.cpp \
  /usr/include/stdc-predef.h /usr/local/include/openfhe/pke/openfhe.h \
  /usr/include/c++/11/initializer_list \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

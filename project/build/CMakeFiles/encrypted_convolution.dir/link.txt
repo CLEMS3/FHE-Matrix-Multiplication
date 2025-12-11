@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Werror -DOPENFHE_VERSION=1.4.0 -Wno-parentheses -O3 -DMATHBACKEND=4 -fopenmp -g CMakeFiles/encrypted_convolution.dir/encrypted_convolution.cpp.o -o encrypted_convolution   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib /usr/local/lib/libOPENFHEpke.so.1.4.0 /usr/local/lib/libOPENFHEbinfhe.so.1.4.0 -fopenmp /usr/local/lib/libOPENFHEcore.so.1.4.0 -fopenmp -ldl 
